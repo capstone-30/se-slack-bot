@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+  <title id="title">프로젝트 소개 흐름</title>
+  <desc id="desc">날씨, 강의 시간표, Google Calendar 일정을 하나의 데일리 브리프로 모아 Slack 채널이나 개인 메시지로 전달하고, 저장한 시간표는 ICS로 구독하는 서비스입니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#A73C3E"/>
+    </marker>
+    <style>
+      .eyebrow { font: 600 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1.4px; fill: #7a7a7a; }
+      .title { font: 600 23px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1d1d1f; }
+      .title-dark { font: 600 25px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .body { font: 400 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #7a7a7a; }
+      .body-dark { font: 400 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #cccccc; }
+      .chip { font: 600 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #A73C3E; }
+      .flow { fill: none; stroke: #A73C3E; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="440" rx="28" fill="#f5f5f7"/>
+
+  <text x="48" y="48" class="eyebrow">COLLECT</text>
+  <rect x="48" y="76" width="300" height="84" rx="18" fill="#ffffff"/>
+  <circle cx="84" cy="118" r="16" fill="#A73C3E"/>
+  <path d="M76 121c2-8 14-8 16 0M78 115c2-5 10-5 12 0" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="112" y="114" class="title">실시간 날씨</text>
+  <text x="112" y="139" class="body">기온 · 강수확률 · 습도</text>
+
+  <rect x="48" y="178" width="300" height="84" rx="18" fill="#ffffff"/>
+  <circle cx="84" cy="220" r="16" fill="#A73C3E"/>
+  <path d="M77 213h14v14H77zM77 218h14M81 210v6M87 210v6" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="112" y="216" class="title">강의 시간표</text>
+  <text x="112" y="241" class="body">사용자별 수업과 장소</text>
+
+  <rect x="48" y="280" width="300" height="84" rx="18" fill="#ffffff"/>
+  <circle cx="84" cy="322" r="16" fill="#A73C3E"/>
+  <path d="M77 315h14v14H77zM77 320h14" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="112" y="318" class="title">Google Calendar</text>
+  <text x="112" y="343" class="body">오늘의 개인 일정</text>
+
+  <path d="M348 118 H400 Q420 118 420 138 V196 H454" class="flow"/>
+  <path d="M348 220 H454" class="flow"/>
+  <path d="M348 322 H400 Q420 322 420 302 V244 H454" class="flow"/>
+
+  <text x="454" y="48" class="eyebrow">ORGANIZE</text>
+  <rect x="454" y="76" width="360" height="288" rx="24" fill="#272729"/>
+  <rect x="486" y="108" width="114" height="30" rx="15" fill="#FCE9E9"/>
+  <text x="505" y="128" class="chip">DAILY BRIEF</text>
+  <text x="486" y="184" class="title-dark">하루에 필요한 정보를</text>
+  <text x="486" y="220" class="title-dark">한 번에 정리합니다</text>
+  <text x="486" y="265" class="body-dark">사용자별 도시 · 알림 시각 · 타임존을 반영해</text>
+  <text x="486" y="291" class="body-dark">필요한 내용만 보기 좋은 Slack 메시지로 구성</text>
+  <rect x="486" y="317" width="118" height="30" rx="15" fill="#3a3a3c"/>
+  <text x="506" y="337" class="body-dark">Block Kit</text>
+  <rect x="614" y="317" width="142" height="30" rx="15" fill="#3a3a3c"/>
+  <text x="634" y="337" class="body-dark">개인 설정 반영</text>
+
+  <path d="M814 220 H884" class="flow"/>
+
+  <text x="884" y="48" class="eyebrow">DELIVER</text>
+  <rect x="884" y="76" width="348" height="184" rx="18" fill="#ffffff"/>
+  <circle cx="922" cy="116" r="16" fill="#4a154b"/>
+  <path d="M914 116h16M922 108v16" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <text x="950" y="123" class="title">Slack으로 자동 전달</text>
+  <text x="912" y="166" class="body">매일 지정 시각에 채널 또는 개인 DM 전송</text>
+  <rect x="912" y="197" width="108" height="32" rx="16" fill="#FCE9E9"/>
+  <text x="932" y="218" class="chip">예약 전송</text>
+  <rect x="1030" y="197" width="112" height="32" rx="16" fill="#FCE9E9"/>
+  <text x="1051" y="218" class="chip">즉시 조회</text>
+
+  <rect x="884" y="280" width="348" height="84" rx="18" fill="#ffffff"/>
+  <circle cx="922" cy="322" r="16" fill="#A73C3E"/>
+  <path d="M914 322h16M922 314v16" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="950" y="318" class="title">ICS 캘린더 구독</text>
+  <text x="950" y="343" class="body">외부 캘린더에서 강의 일정 확인</text>
+
+  <path d="M814 322 H884" class="flow"/>
+</svg>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Slack Weather and Schedule Bot system architecture</title>
+  <desc id="desc">Slack commands, scheduled briefs, and calendar subscriptions connect to a Python runtime containing Slack Bolt, APScheduler, and FastAPI. The runtime uses OpenWeather, Google Calendar, and SQLite or PostgreSQL.</desc>
+
+  <defs>
+    <marker id="arrow-accent" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#A73C3E"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#7a7a7a"/>
+    </marker>
+    <style>
+      .label { font: 600 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1.5px; fill: #7a7a7a; }
+      .title { font: 600 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1d1d1f; }
+      .title-dark { font: 600 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .card-title { font: 600 19px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1d1d1f; }
+      .body { font: 400 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #7a7a7a; }
+      .body-dark { font: 400 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #cccccc; }
+      .chip { font: 600 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #A73C3E; }
+      .connector { fill: none; stroke: #A73C3E; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .flow { fill: none; stroke: #A73C3E; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-accent); }
+      .flow-muted { fill: none; stroke: #7a7a7a; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-gray); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="760" rx="28" fill="#f5f5f7"/>
+
+  <text x="52" y="54" class="label">CLIENTS</text>
+  <text x="382" y="54" class="label">APPLICATION</text>
+  <text x="916" y="54" class="label">SERVICES &amp; DATA</text>
+
+  <!-- Client cards -->
+  <rect x="52" y="92" width="250" height="184" rx="18" fill="#ffffff"/>
+  <circle cx="87" cy="129" r="15" fill="#4a154b"/>
+  <path d="M80 129h14M87 122v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <text x="114" y="136" class="card-title">Slack Workspace</text>
+  <text x="78" y="177" class="body">Slash commands</text>
+  <text x="78" y="202" class="body">Channel &amp; direct messages</text>
+  <rect x="78" y="223" width="134" height="30" rx="15" fill="#FCE9E9"/>
+  <text x="95" y="243" class="chip">Socket / HTTP</text>
+
+  <rect x="52" y="484" width="250" height="184" rx="18" fill="#ffffff"/>
+  <circle cx="87" cy="521" r="15" fill="#A73C3E"/>
+  <rect x="80" y="514" width="14" height="14" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <path d="M80 519h14M84 511v6M90 511v6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="114" y="528" class="card-title">Calendar Client</text>
+  <text x="78" y="569" class="body">Apple · Google · Outlook</text>
+  <text x="78" y="594" class="body">Weekly course subscription</text>
+  <rect x="78" y="615" width="104" height="30" rx="15" fill="#FCE9E9"/>
+  <text x="96" y="635" class="chip">ICS feed</text>
+
+  <!-- Runtime shell -->
+  <rect x="382" y="92" width="438" height="576" rx="24" fill="#272729"/>
+  <text x="414" y="133" class="title-dark">Python Runtime</text>
+  <text x="414" y="158" class="body-dark">main.py orchestrates a single application process</text>
+
+  <rect x="414" y="190" width="374" height="116" rx="18" fill="#ffffff"/>
+  <rect x="438" y="215" width="88" height="28" rx="14" fill="#FCE9E9"/>
+  <text x="455" y="234" class="chip">INBOUND</text>
+  <text x="438" y="270" class="card-title">Slack Bolt</text>
+  <text x="566" y="270" class="body">commands · Block Kit · retry</text>
+
+  <rect x="414" y="326" width="374" height="116" rx="18" fill="#ffffff"/>
+  <rect x="438" y="351" width="101" height="28" rx="14" fill="#FCE9E9"/>
+  <text x="454" y="370" class="chip">SCHEDULED</text>
+  <text x="438" y="406" class="card-title">APScheduler</text>
+  <text x="584" y="406" class="body">channel &amp; user briefs</text>
+
+  <rect x="414" y="462" width="374" height="116" rx="18" fill="#ffffff"/>
+  <rect x="438" y="487" width="73" height="28" rx="14" fill="#FCE9E9"/>
+  <text x="455" y="506" class="chip">EXPORT</text>
+  <text x="438" y="542" class="card-title">FastAPI</text>
+  <text x="538" y="542" class="body">token-protected ICS API</text>
+
+  <text x="414" y="629" class="body-dark">weather · schedule · config · google_calendar</text>
+
+  <!-- Service and data cards -->
+  <rect x="916" y="92" width="312" height="150" rx="18" fill="#ffffff"/>
+  <circle cx="951" cy="129" r="15" fill="#A73C3E"/>
+  <path d="M944 132c2-7 12-7 14 0M946 127c1-5 8-5 10 0" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="978" y="136" class="card-title">OpenWeather API</text>
+  <text x="942" y="177" class="body">Current weather · forecast</text>
+  <text x="942" y="202" class="body">In-memory cache fallback</text>
+
+  <rect x="916" y="261" width="312" height="150" rx="18" fill="#ffffff"/>
+  <circle cx="951" cy="298" r="15" fill="#A73C3E"/>
+  <rect x="944" y="291" width="14" height="14" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <path d="M944 296h14" stroke="#ffffff" stroke-width="2"/>
+  <text x="978" y="305" class="card-title">Google Calendar API</text>
+  <text x="942" y="346" class="body">Read-only OAuth access</text>
+  <text x="942" y="371" class="body">Today’s events</text>
+
+  <rect x="916" y="430" width="312" height="238" rx="18" fill="#ffffff"/>
+  <circle cx="951" cy="467" r="15" fill="#1d1d1f"/>
+  <ellipse cx="951" cy="462" rx="8" ry="4" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <path d="M943 462v10c0 5 16 5 16 0v-10" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="978" y="474" class="card-title">Persistence</text>
+  <text x="942" y="515" class="body">User configuration</text>
+  <text x="942" y="540" class="body">Course schedule</text>
+  <text x="942" y="565" class="body">Google OAuth tokens</text>
+  <rect x="942" y="595" width="106" height="34" rx="17" fill="#f5f5f7"/>
+  <text x="962" y="617" class="body">SQLite</text>
+  <rect x="1058" y="595" width="144" height="34" rx="17" fill="#f5f5f7"/>
+  <text x="1077" y="617" class="body">PostgreSQL</text>
+
+  <!-- Data flows -->
+  <path d="M302 184 H350 Q366 184 366 200 V248 H414" class="flow"/>
+  <path d="M414 282 H366 Q350 282 350 264 V248 H302" class="flow-muted"/>
+  <path d="M302 576 H350 Q366 576 366 560 V520 H414" class="flow"/>
+
+  <path d="M788 248 H862" class="connector"/>
+  <path d="M788 384 H862" class="connector"/>
+  <path d="M862 167 V549" class="connector"/>
+  <path d="M862 167 H916" class="flow"/>
+  <path d="M862 336 H916" class="flow"/>
+  <path d="M862 549 H916" class="flow"/>
+  <path d="M788 520 H836 Q850 520 850 536 V614 Q850 630 866 630 H916" class="flow-muted"/>
+
+  <circle cx="366" cy="248" r="5" fill="#A73C3E"/>
+  <circle cx="862" cy="248" r="5" fill="#A73C3E"/>
+  <circle cx="862" cy="384" r="5" fill="#A73C3E"/>
+</svg>

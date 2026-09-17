@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="610" viewBox="0 0 1280 610" role="img" aria-labelledby="title desc">
+  <title id="title">Slack Weather and Schedule Bot 핵심 기능</title>
+  <desc id="desc">데일리 브리프, 슬래시 커맨드, 개인 시간표 관리, Google Calendar 연동, 장애 대응 기능을 카드로 요약합니다.</desc>
+  <defs>
+    <style>
+      .num { font: 600 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1px; fill: #A73C3E; }
+      .title { font: 600 22px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1d1d1f; }
+      .body { font: 400 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #7a7a7a; }
+      .command { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #A73C3E; }
+      .command-dark { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #E08789; }
+      .num-dark { font: 600 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1px; fill: #E08789; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="610" rx="28" fill="#f5f5f7"/>
+
+  <rect x="48" y="48" width="365" height="232" rx="20" fill="#ffffff"/>
+  <circle cx="88" cy="88" r="18" fill="#A73C3E"/>
+  <path d="M80 88h16M88 80v16" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="120" y="81" class="num">01</text>
+  <text x="120" y="111" class="title">데일리 브리프</text>
+  <text x="76" y="158" class="body">날씨 · 강의 · 캘린더 일정을 한 메시지로</text>
+  <text x="76" y="184" class="body">정리해 지정 시각에 채널 또는 DM으로 전송</text>
+  <rect x="76" y="214" width="107" height="34" rx="17" fill="#FCE9E9"/>
+  <text x="96" y="236" class="command">/brief</text>
+
+  <rect x="458" y="48" width="365" height="232" rx="20" fill="#272729"/>
+  <circle cx="498" cy="88" r="18" fill="#A73C3E"/>
+  <path d="M489 88h18M498 79v18" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="530" y="81" class="num-dark">02</text>
+  <text x="530" y="111" style="font:600 22px system-ui,-apple-system,sans-serif;fill:#fff">슬래시 커맨드</text>
+  <text x="486" y="158" style="font:400 15px system-ui,-apple-system,sans-serif;fill:#ccc">조회부터 사용자 설정까지 Slack 안에서 처리</text>
+  <text x="486" y="184" style="font:400 15px system-ui,-apple-system,sans-serif;fill:#ccc">영문 명령어와 한글 별칭을 함께 지원</text>
+  <rect x="486" y="214" width="109" height="34" rx="17" fill="#3a3a3c"/>
+  <text x="505" y="236" class="command-dark">/weather</text>
+  <rect x="605" y="214" width="116" height="34" rx="17" fill="#3a3a3c"/>
+  <text x="624" y="236" class="command-dark">/schedule</text>
+
+  <rect x="868" y="48" width="365" height="232" rx="20" fill="#ffffff"/>
+  <circle cx="908" cy="88" r="18" fill="#A73C3E"/>
+  <path d="M900 81h16v16h-16zM900 86h16M904 78v6M912 78v6" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="940" y="81" class="num">03</text>
+  <text x="940" y="111" class="title">개인 시간표 관리</text>
+  <text x="896" y="158" class="body">사용자별 강의 일정을 추가 · 수정 · 삭제</text>
+  <text x="896" y="184" class="body">반복 일정이 포함된 ICS 캘린더 제공</text>
+  <rect x="896" y="214" width="124" height="34" rx="17" fill="#FCE9E9"/>
+  <text x="915" y="236" class="command">ICS export</text>
+
+  <rect x="253" y="326" width="365" height="232" rx="20" fill="#ffffff"/>
+  <circle cx="293" cy="366" r="18" fill="#A73C3E"/>
+  <path d="M285 359h16v16h-16zM285 364h16" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="325" y="359" class="num">04</text>
+  <text x="325" y="389" class="title">Google Calendar 연동</text>
+  <text x="281" y="436" class="body">사용자별 읽기 전용 OAuth로 오늘 일정 조회</text>
+  <text x="281" y="462" class="body">연동 실패 시에도 나머지 브리프는 계속 제공</text>
+  <rect x="281" y="492" width="131" height="34" rx="17" fill="#FCE9E9"/>
+  <text x="301" y="514" class="command">OAuth 2.0</text>
+
+  <rect x="663" y="326" width="365" height="232" rx="20" fill="#ffffff"/>
+  <circle cx="703" cy="366" r="18" fill="#1d1d1f"/>
+  <path d="M703 355v13M703 376v1" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="735" y="359" class="num">05</text>
+  <text x="735" y="389" class="title">장애 대응</text>
+  <text x="691" y="436" class="body">날씨 API 캐시 폴백과 Slack 전송 재시도</text>
+  <text x="691" y="462" class="body">오류 알림으로 서비스 실패를 빠르게 확인</text>
+  <rect x="691" y="492" width="110" height="34" rx="17" fill="#FCE9E9"/>
+  <text x="712" y="514" class="command">3 retries</text>
+</svg>
